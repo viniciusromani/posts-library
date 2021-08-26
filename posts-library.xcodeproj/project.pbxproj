@@ -3,24 +3,50 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A177E4CD26D79727000C4179 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4CC26D79727000C4179 /* PostEntity.swift */; };
+		A177E4CF26D79796000C4179 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4CE26D79796000C4179 /* UserEntity.swift */; };
+		A177E4D426D79CA9000C4179 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4D326D79CA9000C4179 /* RequestManager.swift */; };
+		A177E4D726D79CFB000C4179 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4D626D79CFB000C4179 /* Request.swift */; };
+		A177E4D926D79D80000C4179 /* UsersPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4D826D79D80000C4179 /* UsersPostsRequest.swift */; };
+		A177E4DD26D79DF3000C4179 /* UsersPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4DC26D79DF3000C4179 /* UsersPostsResponse.swift */; };
+		A177E4DF26D79DFE000C4179 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4DE26D79DFE000C4179 /* Response.swift */; };
+		A177E4E226D7A213000C4179 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A177E4E126D7A213000C4179 /* Alamofire */; };
+		A177E4E526D7A2A9000C4179 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A177E4E426D7A2A9000C4179 /* RxSwift */; };
+		A177E4E926D7AC4C000C4179 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4E826D7AC4C000C4179 /* UserRepository.swift */; };
+		A177E4EB26D7ACD2000C4179 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4EA26D7ACD2000C4179 /* UserDataSource.swift */; };
+		A177E4ED26D7AE59000C4179 /* ReactiveUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4EC26D7AE59000C4179 /* ReactiveUseCase.swift */; };
+		A177E4EF26D7AEAB000C4179 /* FetchUsersPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4EE26D7AEAB000C4179 /* FetchUsersPostsUseCase.swift */; };
+		A177E4F326D7AEF8000C4179 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4F226D7AEF8000C4179 /* PostModel.swift */; };
+		A177E4F526D7AF06000C4179 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4F426D7AF06000C4179 /* UserModel.swift */; };
+		A177E4F826D7AFE7000C4179 /* CachedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4F726D7AFE7000C4179 /* CachedDateFormatter.swift */; };
 		A1EC98EE26D74F7F0045CE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */; };
 		A1EC98F026D74F7F0045CE42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */; };
-		A1EC98F226D74F7F0045CE42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98F126D74F7F0045CE42 /* ViewController.swift */; };
-		A1EC98F526D74F7F0045CE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EC98F326D74F7F0045CE42 /* Main.storyboard */; };
 		A1EC98F726D74F820045CE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EC98F626D74F820045CE42 /* Assets.xcassets */; };
 		A1EC98FA26D74F820045CE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EC98F826D74F820045CE42 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A177E4CC26D79727000C4179 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		A177E4CE26D79796000C4179 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		A177E4D326D79CA9000C4179 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		A177E4D626D79CFB000C4179 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A177E4D826D79D80000C4179 /* UsersPostsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPostsRequest.swift; sourceTree = "<group>"; };
+		A177E4DC26D79DF3000C4179 /* UsersPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPostsResponse.swift; sourceTree = "<group>"; };
+		A177E4DE26D79DFE000C4179 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A177E4E826D7AC4C000C4179 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		A177E4EA26D7ACD2000C4179 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		A177E4EC26D7AE59000C4179 /* ReactiveUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveUseCase.swift; sourceTree = "<group>"; };
+		A177E4EE26D7AEAB000C4179 /* FetchUsersPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUsersPostsUseCase.swift; sourceTree = "<group>"; };
+		A177E4F226D7AEF8000C4179 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		A177E4F426D7AF06000C4179 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A177E4F726D7AFE7000C4179 /* CachedDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedDateFormatter.swift; sourceTree = "<group>"; };
 		A1EC98EA26D74F7F0045CE42 /* posts-library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "posts-library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1EC98F126D74F7F0045CE42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A1EC98F426D74F7F0045CE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1EC98F626D74F820045CE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1EC98F926D74F820045CE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1EC98FB26D74F820045CE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,12 +57,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A177E4E526D7A2A9000C4179 /* RxSwift in Frameworks */,
+				A177E4E226D7A213000C4179 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A177E4CB26D79718000C4179 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4CC26D79727000C4179 /* PostEntity.swift */,
+				A177E4CE26D79796000C4179 /* UserEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A177E4E626D7ABF5000C4179 /* UserPosts */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4D826D79D80000C4179 /* UsersPostsRequest.swift */,
+				A177E4DC26D79DF3000C4179 /* UsersPostsResponse.swift */,
+			);
+			path = UserPosts;
+			sourceTree = "<group>";
+		};
+		A177E4E726D7AC3C000C4179 /* UserRepository */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4E626D7ABF5000C4179 /* UserPosts */,
+				A177E4E826D7AC4C000C4179 /* UserRepository.swift */,
+				A177E4EA26D7ACD2000C4179 /* UserDataSource.swift */,
+			);
+			path = UserRepository;
+			sourceTree = "<group>";
+		};
+		A177E4F026D7AED7000C4179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4F226D7AEF8000C4179 /* PostModel.swift */,
+				A177E4F426D7AF06000C4179 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A177E4F126D7AEDF000C4179 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4EC26D7AE59000C4179 /* ReactiveUseCase.swift */,
+				A177E4EE26D7AEAB000C4179 /* FetchUsersPostsUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A177E4F626D7AFD5000C4179 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4F726D7AFE7000C4179 /* CachedDateFormatter.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		A1EC98E126D74F7F0045CE42 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +138,53 @@
 		A1EC98EC26D74F7F0045CE42 /* posts-library */ = {
 			isa = PBXGroup;
 			children = (
+				A177E4F626D7AFD5000C4179 /* Common */,
+				A1EC990426D751FC0045CE42 /* Networking */,
+				A1EC990326D74FC40045CE42 /* Presentation */,
+				A1EC990226D74FBF0045CE42 /* Domain */,
+				A1EC990126D74FBA0045CE42 /* Data */,
 				A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */,
 				A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */,
-				A1EC98F126D74F7F0045CE42 /* ViewController.swift */,
-				A1EC98F326D74F7F0045CE42 /* Main.storyboard */,
 				A1EC98F626D74F820045CE42 /* Assets.xcassets */,
 				A1EC98F826D74F820045CE42 /* LaunchScreen.storyboard */,
 				A1EC98FB26D74F820045CE42 /* Info.plist */,
 			);
 			path = "posts-library";
+			sourceTree = "<group>";
+		};
+		A1EC990126D74FBA0045CE42 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4CB26D79718000C4179 /* Entity */,
+				A177E4E726D7AC3C000C4179 /* UserRepository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A1EC990226D74FBF0045CE42 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4F126D7AEDF000C4179 /* UseCase */,
+				A177E4F026D7AED7000C4179 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A1EC990326D74FC40045CE42 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A1EC990426D751FC0045CE42 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4DE26D79DFE000C4179 /* Response.swift */,
+				A177E4D626D79CFB000C4179 /* Request.swift */,
+				A177E4D326D79CA9000C4179 /* RequestManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +203,10 @@
 			dependencies = (
 			);
 			name = "posts-library";
+			packageProductDependencies = (
+				A177E4E126D7A213000C4179 /* Alamofire */,
+				A177E4E426D7A2A9000C4179 /* RxSwift */,
+			);
 			productName = "posts-library";
 			productReference = A1EC98EA26D74F7F0045CE42 /* posts-library.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +234,10 @@
 				Base,
 			);
 			mainGroup = A1EC98E126D74F7F0045CE42;
+			packageReferences = (
+				A177E4E026D7A213000C4179 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A177E4E326D7A2A9000C4179 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = A1EC98EB26D74F7F0045CE42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +254,6 @@
 			files = (
 				A1EC98FA26D74F820045CE42 /* LaunchScreen.storyboard in Resources */,
 				A1EC98F726D74F820045CE42 /* Assets.xcassets in Resources */,
-				A1EC98F526D74F7F0045CE42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +264,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1EC98F226D74F7F0045CE42 /* ViewController.swift in Sources */,
+				A177E4E926D7AC4C000C4179 /* UserRepository.swift in Sources */,
+				A177E4EF26D7AEAB000C4179 /* FetchUsersPostsUseCase.swift in Sources */,
 				A1EC98EE26D74F7F0045CE42 /* AppDelegate.swift in Sources */,
+				A177E4F326D7AEF8000C4179 /* PostModel.swift in Sources */,
+				A177E4CF26D79796000C4179 /* UserEntity.swift in Sources */,
+				A177E4DD26D79DF3000C4179 /* UsersPostsResponse.swift in Sources */,
+				A177E4EB26D7ACD2000C4179 /* UserDataSource.swift in Sources */,
+				A177E4D426D79CA9000C4179 /* RequestManager.swift in Sources */,
+				A177E4D926D79D80000C4179 /* UsersPostsRequest.swift in Sources */,
+				A177E4DF26D79DFE000C4179 /* Response.swift in Sources */,
+				A177E4D726D79CFB000C4179 /* Request.swift in Sources */,
+				A177E4ED26D7AE59000C4179 /* ReactiveUseCase.swift in Sources */,
+				A177E4CD26D79727000C4179 /* PostEntity.swift in Sources */,
+				A177E4F526D7AF06000C4179 /* UserModel.swift in Sources */,
+				A177E4F826D7AFE7000C4179 /* CachedDateFormatter.swift in Sources */,
 				A1EC98F026D74F7F0045CE42 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +286,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A1EC98F326D74F7F0045CE42 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1EC98F426D74F7F0045CE42 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A1EC98F826D74F820045CE42 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -339,6 +471,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A177E4E026D7A213000C4179 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		A177E4E326D7A2A9000C4179 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A177E4E126D7A213000C4179 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A177E4E026D7A213000C4179 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A177E4E426D7A2A9000C4179 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A177E4E326D7A2A9000C4179 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A1EC98E226D74F7F0045CE42 /* Project object */;
 }
