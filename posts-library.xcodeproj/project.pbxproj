@@ -23,6 +23,14 @@
 		A177E4F326D7AEF8000C4179 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4F226D7AEF8000C4179 /* PostModel.swift */; };
 		A177E4F526D7AF06000C4179 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4F426D7AF06000C4179 /* UserModel.swift */; };
 		A177E4F826D7AFE7000C4179 /* CachedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4F726D7AFE7000C4179 /* CachedDateFormatter.swift */; };
+		A177E4FC26D7C4B7000C4179 /* UsersPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4FB26D7C4B7000C4179 /* UsersPostsViewController.swift */; };
+		A177E4FE26D7C4E6000C4179 /* UsersPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E4FD26D7C4E6000C4179 /* UsersPostsView.swift */; };
+		A177E50126D7C552000C4179 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A177E50026D7C552000C4179 /* SnapKit */; };
+		A177E50326D7C629000C4179 /* PostSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E50226D7C629000C4179 /* PostSceneModel.swift */; };
+		A177E50526D7C8E7000C4179 /* UserSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E50426D7C8E7000C4179 /* UserSceneModel.swift */; };
+		A177E50826D7C9F6000C4179 /* UsersPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E50726D7C9F6000C4179 /* UsersPostsViewModel.swift */; };
+		A177E50C26D7CF9F000C4179 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E50B26D7CF9F000C4179 /* Coordinator.swift */; };
+		A177E50E26D7CFDF000C4179 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E50D26D7CFDF000C4179 /* AppCoordinator.swift */; };
 		A1EC98EE26D74F7F0045CE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */; };
 		A1EC98F026D74F7F0045CE42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */; };
 		A1EC98F726D74F820045CE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EC98F626D74F820045CE42 /* Assets.xcassets */; };
@@ -44,6 +52,13 @@
 		A177E4F226D7AEF8000C4179 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		A177E4F426D7AF06000C4179 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A177E4F726D7AFE7000C4179 /* CachedDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedDateFormatter.swift; sourceTree = "<group>"; };
+		A177E4FB26D7C4B7000C4179 /* UsersPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPostsViewController.swift; sourceTree = "<group>"; };
+		A177E4FD26D7C4E6000C4179 /* UsersPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPostsView.swift; sourceTree = "<group>"; };
+		A177E50226D7C629000C4179 /* PostSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSceneModel.swift; sourceTree = "<group>"; };
+		A177E50426D7C8E7000C4179 /* UserSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSceneModel.swift; sourceTree = "<group>"; };
+		A177E50726D7C9F6000C4179 /* UsersPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPostsViewModel.swift; sourceTree = "<group>"; };
+		A177E50B26D7CF9F000C4179 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A177E50D26D7CFDF000C4179 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A1EC98EA26D74F7F0045CE42 /* posts-library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "posts-library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A177E50126D7C552000C4179 /* SnapKit in Frameworks */,
 				A177E4E526D7A2A9000C4179 /* RxSwift in Frameworks */,
 				A177E4E226D7A213000C4179 /* Alamofire in Frameworks */,
 			);
@@ -119,6 +135,34 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		A177E4FA26D7C47D000C4179 /* UsersPostsScene */ = {
+			isa = PBXGroup;
+			children = (
+				A177E4FB26D7C4B7000C4179 /* UsersPostsViewController.swift */,
+				A177E4FD26D7C4E6000C4179 /* UsersPostsView.swift */,
+				A177E50726D7C9F6000C4179 /* UsersPostsViewModel.swift */,
+			);
+			path = UsersPostsScene;
+			sourceTree = "<group>";
+		};
+		A177E50626D7C905000C4179 /* SceneModel */ = {
+			isa = PBXGroup;
+			children = (
+				A177E50226D7C629000C4179 /* PostSceneModel.swift */,
+				A177E50426D7C8E7000C4179 /* UserSceneModel.swift */,
+			);
+			path = SceneModel;
+			sourceTree = "<group>";
+		};
+		A177E50926D7CDE5000C4179 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A177E50B26D7CF9F000C4179 /* Coordinator.swift */,
+				A177E50D26D7CFDF000C4179 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A1EC98E126D74F7F0045CE42 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +182,7 @@
 		A1EC98EC26D74F7F0045CE42 /* posts-library */ = {
 			isa = PBXGroup;
 			children = (
+				A177E50926D7CDE5000C4179 /* Coordinator */,
 				A177E4F626D7AFD5000C4179 /* Common */,
 				A1EC990426D751FC0045CE42 /* Networking */,
 				A1EC990326D74FC40045CE42 /* Presentation */,
@@ -173,6 +218,8 @@
 		A1EC990326D74FC40045CE42 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A177E4FA26D7C47D000C4179 /* UsersPostsScene */,
+				A177E50626D7C905000C4179 /* SceneModel */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -206,6 +253,7 @@
 			packageProductDependencies = (
 				A177E4E126D7A213000C4179 /* Alamofire */,
 				A177E4E426D7A2A9000C4179 /* RxSwift */,
+				A177E50026D7C552000C4179 /* SnapKit */,
 			);
 			productName = "posts-library";
 			productReference = A1EC98EA26D74F7F0045CE42 /* posts-library.app */;
@@ -237,6 +285,7 @@
 			packageReferences = (
 				A177E4E026D7A213000C4179 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A177E4E326D7A2A9000C4179 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A177E4FF26D7C552000C4179 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = A1EC98EB26D74F7F0045CE42 /* Products */;
 			projectDirPath = "";
@@ -265,10 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A177E4E926D7AC4C000C4179 /* UserRepository.swift in Sources */,
+				A177E50826D7C9F6000C4179 /* UsersPostsViewModel.swift in Sources */,
 				A177E4EF26D7AEAB000C4179 /* FetchUsersPostsUseCase.swift in Sources */,
 				A1EC98EE26D74F7F0045CE42 /* AppDelegate.swift in Sources */,
 				A177E4F326D7AEF8000C4179 /* PostModel.swift in Sources */,
 				A177E4CF26D79796000C4179 /* UserEntity.swift in Sources */,
+				A177E50E26D7CFDF000C4179 /* AppCoordinator.swift in Sources */,
+				A177E50C26D7CF9F000C4179 /* Coordinator.swift in Sources */,
+				A177E4FE26D7C4E6000C4179 /* UsersPostsView.swift in Sources */,
 				A177E4DD26D79DF3000C4179 /* UsersPostsResponse.swift in Sources */,
 				A177E4EB26D7ACD2000C4179 /* UserDataSource.swift in Sources */,
 				A177E4D426D79CA9000C4179 /* RequestManager.swift in Sources */,
@@ -276,10 +329,13 @@
 				A177E4DF26D79DFE000C4179 /* Response.swift in Sources */,
 				A177E4D726D79CFB000C4179 /* Request.swift in Sources */,
 				A177E4ED26D7AE59000C4179 /* ReactiveUseCase.swift in Sources */,
+				A177E50526D7C8E7000C4179 /* UserSceneModel.swift in Sources */,
 				A177E4CD26D79727000C4179 /* PostEntity.swift in Sources */,
 				A177E4F526D7AF06000C4179 /* UserModel.swift in Sources */,
+				A177E4FC26D7C4B7000C4179 /* UsersPostsViewController.swift in Sources */,
 				A177E4F826D7AFE7000C4179 /* CachedDateFormatter.swift in Sources */,
 				A1EC98F026D74F7F0045CE42 /* SceneDelegate.swift in Sources */,
+				A177E50326D7C629000C4179 /* PostSceneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +545,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		A177E4FF26D7C552000C4179 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -501,6 +565,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A177E4E326D7A2A9000C4179 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		A177E50026D7C552000C4179 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A177E4FF26D7C552000C4179 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

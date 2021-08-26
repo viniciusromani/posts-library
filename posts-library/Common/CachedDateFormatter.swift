@@ -40,4 +40,9 @@ extension CachedDateFormatter {
         let format = "EEE MMM dd yyyy HH:mm:ss 'GMT'z"
         return self.cachedDateFormatter(dateFormat: format)
     }
+    
+    func userFriendlyFormat() -> DateFormatter {
+        let format = "MMM dd"
+        return self.cachedDateFormatter(dateFormat: format)
+    }
 }
