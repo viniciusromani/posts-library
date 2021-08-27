@@ -3,6 +3,8 @@ import Kingfisher
 
 class NPicturesView: UIView {
     
+    private let label = UILabel()
+    
     init() {
         super.init(frame: .zero)
         self.buildViews()
@@ -19,15 +21,20 @@ class NPicturesView: UIView {
     }
     
     private func addSubviews() {
-        
+        self.addSubview(self.label)
     }
     
     private func formatSubviews() {
-        
+        self.label.text = "Not implemented yet"
+        self.label.textAlignment = .center
+        self.label.textColor = .gray
+        self.label.font = .systemFont(ofSize: 24)
     }
     
     private func addConstraintsToSubviews() {
-        
+        label.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(24)
+        }
     }
 }
 

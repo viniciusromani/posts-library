@@ -15,6 +15,6 @@ struct FetchUsersPostsUseCase: SingleUseCase {
     
     func execute(with params: Void? = nil) -> Single<[UserModel]> {
         return self.repository.retrieveUsersPosts()
-            .map { [UserModel.asArray(mapping: $0.data)[2], UserModel.asArray(mapping: $0.data)[2], UserModel.asArray(mapping: $0.data)[2], UserModel.asArray(mapping: $0.data)[2], UserModel.asArray(mapping: $0.data)[2], UserModel.asArray(mapping: $0.data)[2], UserModel.asArray(mapping: $0.data)[2]] }
+            .map { UserModel.asArray(mapping: $0.data) }
     }
 }

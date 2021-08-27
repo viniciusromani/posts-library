@@ -3,7 +3,6 @@ import Kingfisher
 
 class PostHeaderView: UIView {
     
-    private let container = UIView()
     private let image = UIImageView()
     private let infoContainer = UIStackView()
     private let name = UILabel()
@@ -27,11 +26,8 @@ class PostHeaderView: UIView {
     private func addSubviews() {
         self.infoContainer.addArrangedSubviews([self.name,
                                                 self.email])
-        
-        self.container.addSubviews([self.image,
-                                    self.infoContainer])
-        
-        self.addSubview(self.container)
+        self.addSubviews([self.image,
+                          self.infoContainer])
     }
     
     private func formatViews() {
@@ -51,18 +47,15 @@ class PostHeaderView: UIView {
     }
     
     private func addConstraintsToSubviews() {
-        container.snp.makeConstraints { make in
-            make.top.left.centerX.centerY.equalToSuperview()
-        }
-        
         image.snp.makeConstraints { make in
             make.width.height.equalTo(44)
-            make.left.centerY.equalToSuperview()
+            make.centerY.left.equalToSuperview()
         }
         
         infoContainer.snp.makeConstraints { make in
+            make.top.bottom.greaterThanOrEqualToSuperview()
             make.left.equalTo(self.image.snp.right).offset(8)
-            make.top.centerY.equalToSuperview()
+            make.centerY.right.equalToSuperview()
         }
     }
 }

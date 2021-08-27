@@ -49,6 +49,14 @@
 		A19A426B26D8B245000CEBA4 /* PostPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A426A26D8B245000CEBA4 /* PostPictureView.swift */; };
 		A19D25EF26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25EE26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift */; };
 		A19D25F226D91E7000B2CC6F /* GeneralException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25F126D91E7000B2CC6F /* GeneralException.swift */; };
+		A19D25F526D9322800B2CC6F /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A19D25F426D9322800B2CC6F /* CouchbaseLiteSwift */; };
+		A19D25FA26D9352F00B2CC6F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25F926D9352F00B2CC6F /* DatabaseManager.swift */; };
+		A19D25FD26D9379F00B2CC6F /* CacheDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25FC26D9379F00B2CC6F /* CacheDataSource.swift */; };
+		A19D25FF26D937B300B2CC6F /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25FE26D937B300B2CC6F /* CacheRepository.swift */; };
+		A19D260826D95BDC00B2CC6F /* CachableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D260726D95BDC00B2CC6F /* CachableEntity.swift */; };
+		A19D260A26D970FC00B2CC6F /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D260926D970FB00B2CC6F /* JSONObject.swift */; };
+		A19D260C26D973AF00B2CC6F /* JSONParseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D260B26D973AF00B2CC6F /* JSONParseException.swift */; };
+		A19D260E26D9922F00B2CC6F /* UnknownException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D260D26D9922E00B2CC6F /* UnknownException.swift */; };
 		A1EC98EE26D74F7F0045CE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */; };
 		A1EC98F026D74F7F0045CE42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */; };
 		A1EC98F726D74F820045CE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EC98F626D74F820045CE42 /* Assets.xcassets */; };
@@ -92,6 +100,13 @@
 		A19A426A26D8B245000CEBA4 /* PostPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureView.swift; sourceTree = "<group>"; };
 		A19D25EE26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		A19D25F126D91E7000B2CC6F /* GeneralException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralException.swift; sourceTree = "<group>"; };
+		A19D25F926D9352F00B2CC6F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A19D25FC26D9379F00B2CC6F /* CacheDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheDataSource.swift; sourceTree = "<group>"; };
+		A19D25FE26D937B300B2CC6F /* CacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
+		A19D260726D95BDC00B2CC6F /* CachableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableEntity.swift; sourceTree = "<group>"; };
+		A19D260926D970FB00B2CC6F /* JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
+		A19D260B26D973AF00B2CC6F /* JSONParseException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParseException.swift; sourceTree = "<group>"; };
+		A19D260D26D9922E00B2CC6F /* UnknownException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownException.swift; sourceTree = "<group>"; };
 		A1EC98EA26D74F7F0045CE42 /* posts-library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "posts-library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EC98ED26D74F7F0045CE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1EC98EF26D74F7F0045CE42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +123,7 @@
 				A177E52C26D81416000C4179 /* Kingfisher in Frameworks */,
 				A177E50126D7C552000C4179 /* SnapKit in Frameworks */,
 				A177E4E226D7A213000C4179 /* Alamofire in Frameworks */,
+				A19D25F526D9322800B2CC6F /* CouchbaseLiteSwift in Frameworks */,
 				A177E51B26D7EB13000C4179 /* RxSwift in Frameworks */,
 				A177E51926D7EB13000C4179 /* RxCocoa in Frameworks */,
 				A177E51126D7D27F000C4179 /* Swinject in Frameworks */,
@@ -122,6 +138,7 @@
 			children = (
 				A177E4CC26D79727000C4179 /* PostEntity.swift */,
 				A177E4CE26D79796000C4179 /* UserEntity.swift */,
+				A19D260726D95BDC00B2CC6F /* CachableEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -166,7 +183,9 @@
 		A177E4F626D7AFD5000C4179 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A19D25F926D9352F00B2CC6F /* DatabaseManager.swift */,
 				A177E4F726D7AFE7000C4179 /* CachedDateFormatter.swift */,
+				A19D260926D970FB00B2CC6F /* JSONObject.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -239,8 +258,19 @@
 			isa = PBXGroup;
 			children = (
 				A19D25F126D91E7000B2CC6F /* GeneralException.swift */,
+				A19D260B26D973AF00B2CC6F /* JSONParseException.swift */,
+				A19D260D26D9922E00B2CC6F /* UnknownException.swift */,
 			);
 			path = Exception;
+			sourceTree = "<group>";
+		};
+		A19D25FB26D9378B00B2CC6F /* CacheRepository */ = {
+			isa = PBXGroup;
+			children = (
+				A19D25FE26D937B300B2CC6F /* CacheRepository.swift */,
+				A19D25FC26D9379F00B2CC6F /* CacheDataSource.swift */,
+			);
+			path = CacheRepository;
 			sourceTree = "<group>";
 		};
 		A1EC98E126D74F7F0045CE42 = {
@@ -283,6 +313,7 @@
 			children = (
 				A19D25F026D91E6500B2CC6F /* Exception */,
 				A177E4CB26D79718000C4179 /* Entity */,
+				A19D25FB26D9378B00B2CC6F /* CacheRepository */,
 				A177E4E726D7AC3C000C4179 /* UserRepository */,
 			);
 			path = Data;
@@ -340,6 +371,7 @@
 				A177E51826D7EB13000C4179 /* RxCocoa */,
 				A177E51A26D7EB13000C4179 /* RxSwift */,
 				A177E52B26D81416000C4179 /* Kingfisher */,
+				A19D25F426D9322800B2CC6F /* CouchbaseLiteSwift */,
 			);
 			productName = "posts-library";
 			productReference = A1EC98EA26D74F7F0045CE42 /* posts-library.app */;
@@ -374,6 +406,7 @@
 				A177E50F26D7D27F000C4179 /* XCRemoteSwiftPackageReference "Swinject" */,
 				A177E51726D7EB13000C4179 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A177E52A26D81416000C4179 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A19D25F326D9322800B2CC6F /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */,
 			);
 			productRefGroup = A1EC98EB26D74F7F0045CE42 /* Products */;
 			projectDirPath = "";
@@ -402,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A177E4E926D7AC4C000C4179 /* UserRepository.swift in Sources */,
+				A19D260E26D9922F00B2CC6F /* UnknownException.swift in Sources */,
 				A19A426B26D8B245000CEBA4 /* PostPictureView.swift in Sources */,
 				A177E52426D80164000C4179 /* TriplePictureView.swift in Sources */,
 				A177E50826D7C9F6000C4179 /* UsersPostsViewModel.swift in Sources */,
@@ -409,6 +443,7 @@
 				A177E51626D7D4B1000C4179 /* Container+Extensions.swift in Sources */,
 				A177E52626D80173000C4179 /* NPicturesView.swift in Sources */,
 				A177E53926D8430D000C4179 /* UserPostTableViewCell.swift in Sources */,
+				A19D25FD26D9379F00B2CC6F /* CacheDataSource.swift in Sources */,
 				A1EC98EE26D74F7F0045CE42 /* AppDelegate.swift in Sources */,
 				A177E53526D826A4000C4179 /* UIStackView+Extensions.swift in Sources */,
 				A177E4F326D7AEF8000C4179 /* PostModel.swift in Sources */,
@@ -435,10 +470,15 @@
 				A177E4CD26D79727000C4179 /* PostEntity.swift in Sources */,
 				A177E4F526D7AF06000C4179 /* UserModel.swift in Sources */,
 				A177E4FC26D7C4B7000C4179 /* UsersPostsViewController.swift in Sources */,
+				A19D260A26D970FC00B2CC6F /* JSONObject.swift in Sources */,
+				A19D25FF26D937B300B2CC6F /* CacheRepository.swift in Sources */,
+				A19D25FA26D9352F00B2CC6F /* DatabaseManager.swift in Sources */,
 				A177E4F826D7AFE7000C4179 /* CachedDateFormatter.swift in Sources */,
+				A19D260C26D973AF00B2CC6F /* JSONParseException.swift in Sources */,
 				A19D25EF26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift in Sources */,
 				A1EC98F026D74F7F0045CE42 /* SceneDelegate.swift in Sources */,
 				A177E50326D7C629000C4179 /* PostSceneModel.swift in Sources */,
+				A19D260826D95BDC00B2CC6F /* CachableEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +712,14 @@
 				minimumVersion = 6.3.1;
 			};
 		};
+		A19D25F326D9322800B2CC6F /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/couchbase/couchbase-lite-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -704,6 +752,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A177E52A26D81416000C4179 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		A19D25F426D9322800B2CC6F /* CouchbaseLiteSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A19D25F326D9322800B2CC6F /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */;
+			productName = CouchbaseLiteSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

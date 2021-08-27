@@ -1,6 +1,5 @@
 import Foundation
 
-
 class CachedDateFormatter {
     struct Key: Equatable, Hashable {
         let format: String

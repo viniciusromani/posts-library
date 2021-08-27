@@ -1,4 +1,5 @@
 import Foundation
+import CouchbaseLiteSwift
 
 struct PostEntity {
     let id: Int

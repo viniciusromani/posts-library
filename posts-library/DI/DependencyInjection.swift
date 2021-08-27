@@ -21,7 +21,7 @@ extension DependencyInjection {
                                            window: UIWindow?) {
         container.register(UINavigationController.self) { _ in
             let navigationController = UINavigationController()
-//            navigationController.navigationBar.prefersLargeTitles = true
+            navigationController.navigationBar.prefersLargeTitles = true
             return navigationController
         }.inObjectScope(.transient)
         
@@ -34,8 +34,13 @@ extension DependencyInjection {
     }
     
     private static func injectRepositories(on container: Container) {
-        container.register(UserRepository.self) { _ in
-            let repository = UserRepository()
+        container.register(UserRepository.self) { resolver in
+            let repository = UserRepository(cacheRepository: resolver.resolve(CacheRepository.self)!)
+            return repository
+        }
+        
+        container.register(CacheRepository.self) { _ in
+            let repository = CacheRepository()
             return repository
         }
     }
