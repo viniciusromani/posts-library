@@ -33,6 +33,7 @@ class UserPostTableViewCell: UITableViewCell {
     
     private func formatSubviews() {
         self.backgroundColor = .white
+        self.selectionStyle = .none
     }
     
     private func addConstraintsToSubviews() {

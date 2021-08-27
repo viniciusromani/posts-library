@@ -6,9 +6,10 @@ class UsersPostsViewModel {
     
     private let fetchUsersPostsUseCase: FetchUsersPostsUseCase
     
-    public let loadingIndicator = ActivityIndicator()
+    private let loadingIndicator = ActivityIndicator()
     public var loading = PublishSubject<Bool>()
     public let users = PublishSubject<[UserSceneModel]>()
+    public let error = PublishSubject<Error>()
     private let disposeBag = DisposeBag()
     
     init(fetchUsersPostsUseCase: FetchUsersPostsUseCase) {
@@ -28,7 +29,7 @@ class UsersPostsViewModel {
                     let viewModels = UserSceneModel.asArray(mapping: models)
                     self?.users.onNext(viewModels)
                 }, onError: { [weak self] exception in
-                    print("deu bad")
+                    self?.error.onNext(exception)
                 }
             ).disposed(by: self.disposeBag)
     }

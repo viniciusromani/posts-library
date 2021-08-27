@@ -21,7 +21,7 @@ extension DependencyInjection {
                                            window: UIWindow?) {
         container.register(UINavigationController.self) { _ in
             let navigationController = UINavigationController()
-            navigationController.navigationBar.prefersLargeTitles = true
+//            navigationController.navigationBar.prefersLargeTitles = true
             return navigationController
         }.inObjectScope(.transient)
         

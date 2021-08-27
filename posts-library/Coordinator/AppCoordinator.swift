@@ -23,7 +23,6 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        self.navigationController.navigationItem.title = "Posts"
         self.navigationController.pushViewController(self.usersPostsViewController, animated: false)
         
         self.window?.rootViewController = self.navigationController

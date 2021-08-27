@@ -25,6 +25,7 @@ class UsersPostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Posts"
         self.setBindings()
         self.viewModel.fetchUsersPosts()
     }
@@ -32,6 +33,10 @@ class UsersPostsViewController: UIViewController {
 
 extension UsersPostsViewController {
     private func setBindings() {
+        self.usersPostsView.refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] in self?.viewModel.fetchUsersPosts() })
+            .disposed(by: self.disposeBag)
+        
         self.viewModel.users
             .subscribe(on: MainScheduler.instance)
             .bind(to: self.usersPostsView.tableView.rx.items) { tableView, row, element in
@@ -41,13 +46,21 @@ extension UsersPostsViewController {
                 return cell
             }.disposed(by: self.disposeBag)
         
+        self.viewModel.users
+            .subscribe(on: MainScheduler.instance)
+            .map { _ in "API" }
+            .bind(to: self.usersPostsView.status.rx.text)
+            .disposed(by: self.disposeBag)
+        
         self.viewModel.loading
             .subscribe(on: MainScheduler.instance)
             .bind(to: self.usersPostsView.refreshControl.rx.isRefreshing)
             .disposed(by: self.disposeBag)
         
-        self.usersPostsView.refreshControl.rx.controlEvent(.valueChanged)
-            .subscribe(onNext: { [weak self] in self?.viewModel.fetchUsersPosts() })
+        self.viewModel.error
+            .subscribe(on: MainScheduler.instance)
+            .map { _ in "Cache (Check your internet connection to Fetch from API)" }
+            .bind(to: self.usersPostsView.status.rx.text)
             .disposed(by: self.disposeBag)
     }
 }
