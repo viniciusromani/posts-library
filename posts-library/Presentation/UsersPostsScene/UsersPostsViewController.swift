@@ -6,7 +6,7 @@ class UsersPostsViewController: UIViewController {
     private var usersPostsView: UsersPostsView!
     private let viewModel: UsersPostsViewModel
     
-    private let bag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init(viewModel: UsersPostsViewModel) {
         self.viewModel = viewModel
@@ -26,11 +26,6 @@ class UsersPostsViewController: UIViewController {
         super.viewDidLoad()
         
         self.setBindings()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.viewModel.fetchUsersPosts()
     }
 }
@@ -44,6 +39,15 @@ extension UsersPostsViewController {
                 let cell: UserPostTableViewCell = tableView.dequeueReusableCell(for: indexPath)
                 cell.set(cell: element)
                 return cell
-            }.disposed(by: self.bag)
+            }.disposed(by: self.disposeBag)
+        
+        self.viewModel.loading
+            .subscribe(on: MainScheduler.instance)
+            .bind(to: self.usersPostsView.refreshControl.rx.isRefreshing)
+            .disposed(by: self.disposeBag)
+        
+        self.usersPostsView.refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] in self?.viewModel.fetchUsersPosts() })
+            .disposed(by: self.disposeBag)
     }
 }

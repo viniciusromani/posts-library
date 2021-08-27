@@ -3,6 +3,7 @@ import SnapKit
 
 class UsersPostsView: UIView {
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     
     init() {
         super.init(frame: .zero)
@@ -26,6 +27,8 @@ class UsersPostsView: UIView {
     private func formatViews() {
         self.tableView.separatorStyle = .none
         self.tableView.registerCell(UserPostTableViewCell.self)
+        
+        self.tableView.refreshControl = self.refreshControl
     }
     
     private func addConstraintsToSubviews() {
