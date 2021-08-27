@@ -33,7 +33,7 @@ final class RequestManager<T: Decodable> {
 // MARK: - Helpers
 extension RequestManager {
     private static func url(path: String) -> URLConvertible {
-        return "https://iddog-nrizncxqba-uc.a.run.app/\(path)"
+        return "https://mock.koombea.io/mt/api/\(path)"
     }
     
     private func convertToAlamoHTTPMethod(_ method: HTTPMethod) -> Alamofire.HTTPMethod {

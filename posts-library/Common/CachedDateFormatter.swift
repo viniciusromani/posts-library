@@ -38,11 +38,13 @@ class CachedDateFormatter {
 extension CachedDateFormatter {
     func serverDateFormat() -> DateFormatter {
         let format = "EEE MMM dd yyyy HH:mm:ss 'GMT'z"
-        return self.cachedDateFormatter(dateFormat: format)
+        let locale = Locale(identifier: "en_US_POSIX")
+        return self.cachedDateFormatter(dateFormat: format,
+                                        locale: locale)
     }
     
     func userFriendlyFormat() -> DateFormatter {
-        let format = "MMM dd"
+        let format = "dd MMM"
         return self.cachedDateFormatter(dateFormat: format)
     }
 }

@@ -10,8 +10,12 @@ struct UserSceneModel {
 extension UserSceneModel {
     init(mapping entity: UserModel) {
         self.name = entity.name
-        self.email = entity.email
+        self.email = entity.email.lowercased()
         self.profilePicture = entity.profilePicture
         self.posts = PostSceneModel.asArray(mapping: entity.posts)
+    }
+    
+    static func asArray(mapping entities: [UserModel]) -> [UserSceneModel] {
+        return entities.map { .init(mapping: $0) }
     }
 }

@@ -1,8 +1,7 @@
 import UIKit
-import SnapKit
+import Kingfisher
 
-class UsersPostsView: UIView {
-    let tableView = UITableView()
+class NPicturesView: UIView {
     
     init() {
         super.init(frame: .zero)
@@ -15,22 +14,25 @@ class UsersPostsView: UIView {
     
     private func buildViews() {
         self.addSubviews()
-        self.formatViews()
+        self.formatSubviews()
         self.addConstraintsToSubviews()
     }
     
     private func addSubviews() {
-        self.addSubview(self.tableView)
+        
     }
     
-    private func formatViews() {
-        self.tableView.separatorStyle = .none
-        self.tableView.registerCell(UserPostTableViewCell.self)
+    private func formatSubviews() {
+        
     }
     
     private func addConstraintsToSubviews() {
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        
+    }
+}
+
+extension NPicturesView: PostPictureView {
+    func set(cell urls: [URL]) {
+        
     }
 }

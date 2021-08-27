@@ -11,11 +11,11 @@ extension UserModel {
     init(mapping entity: UserEntity) {
         self.name = entity.name
         self.email = entity.email
-        self.profilePicture = URL(string: entity.profilePicture)
+        self.profilePicture = .init(string: entity.profilePicture)
         self.posts = PostModel.asArray(mapping: entity.posts)
     }
     
     static func asArray(mapping entities: [UserEntity]) -> [UserModel] {
-        return entities.map { UserModel(mapping: $0) }
+        return entities.map { .init(mapping: $0) }
     }
 }

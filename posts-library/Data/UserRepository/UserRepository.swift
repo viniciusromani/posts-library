@@ -6,7 +6,7 @@ struct UserRepository { }
 
 extension UserRepository: UserDataSource {
     func retrieveUsersPosts() -> Single<UsersPostsResponse> {
-        let request = UsersPostsRequest()
+        let request: UsersPostsRequest = .init()
         return RequestManager<UsersPostsResponse>().request(request)
     }
 }

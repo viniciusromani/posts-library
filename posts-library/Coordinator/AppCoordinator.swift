@@ -4,21 +4,29 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var childCoordinators: [Coordinator]
-    private let window: UIWindow
     var navigationController: UINavigationController
     
-    init(window: UIWindow,
-         navigationController: UINavigationController) {
+    private var window: UIWindow?
+    private let usersPostsViewController: UsersPostsViewController
+    
+    init(window: UIWindow?,
+         navigationController: UINavigationController,
+         usersPostsViewController: UsersPostsViewController) {
         self.childCoordinators = []
         self.window = window
         self.navigationController = navigationController
+        self.usersPostsViewController = usersPostsViewController
+    }
+    
+    func setWindow(_ window: UIWindow?) {
+        self.window = window
     }
     
     func start() {
-        let viewController = UsersPostsViewController()
-        self.navigationController.pushViewController(viewController, animated: false)
+        self.navigationController.navigationItem.title = "Posts"
+        self.navigationController.pushViewController(self.usersPostsViewController, animated: false)
         
-        self.window.rootViewController = self.navigationController
-        self.window.makeKeyAndVisible()
+        self.window?.rootViewController = self.navigationController
+        self.window?.makeKeyAndVisible()
     }
 }

@@ -11,7 +11,7 @@ extension UserEntity: Codable {
     private enum CodingKeys: String, CodingKey {
         case name
         case email
-        case profilePicture = "profile_pics"
+        case profilePicture = "profile_pic"
         case posts
     }
     
