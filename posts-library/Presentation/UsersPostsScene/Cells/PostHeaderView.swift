@@ -48,14 +48,15 @@ class PostHeaderView: UIView {
     
     private func addConstraintsToSubviews() {
         image.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(16)
             make.width.height.equalTo(44)
-            make.centerY.left.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
         
         infoContainer.snp.makeConstraints { make in
-            make.top.bottom.greaterThanOrEqualToSuperview()
+            make.top.bottom.equalToSuperview().inset(16)
             make.left.equalTo(self.image.snp.right).offset(8)
-            make.centerY.right.equalToSuperview()
+            make.right.equalToSuperview()
         }
     }
 }

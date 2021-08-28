@@ -19,7 +19,7 @@ class PostBodyView: UIView {
     }
     
     private func addSubviews() {
-        self.addSubviews([self.date])
+        self.addSubview(self.date)
     }
     
     private func formatSubviews() {
@@ -48,7 +48,7 @@ extension PostBodyView {
         case .triple: pictureView = TriplePictureView()
         case .n: pictureView = NPicturesView()
         }
-        
+
         self.addSubview(pictureView)
         pictureView.set(cell: viewModel.pictures)
         pictureView.snp.makeConstraints { make in

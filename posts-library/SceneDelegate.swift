@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  posts-library
-//
-//  Created by Vinicius Romani on 26/08/21.
-//
-
 import UIKit
 import Swinject
 

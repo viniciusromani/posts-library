@@ -37,16 +37,17 @@ class DoublePictureView: UIView {
         
         self.leftImage.layer.masksToBounds = true
         self.leftImage.layer.cornerRadius = 8
-        self.leftImage.contentMode = .scaleAspectFit
+        self.leftImage.contentMode = .scaleAspectFill
         
         self.rightImage.layer.masksToBounds = true
         self.rightImage.layer.cornerRadius = 8
-        self.rightImage.contentMode = .scaleAspectFit
+        self.rightImage.contentMode = .scaleAspectFill
     }
     
     private func addConstraintsToSubviews() {
         container.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().inset(8)
+            make.left.right.bottom.equalToSuperview().inset(16)
         }
         
         leftImage.snp.makeConstraints { make in

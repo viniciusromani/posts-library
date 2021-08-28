@@ -28,13 +28,14 @@ class SinglePictureView: UIView {
         
         self.image.layer.masksToBounds = true
         self.image.layer.cornerRadius = 8
-        self.image.contentMode = .scaleAspectFit
+        self.image.contentMode = .scaleAspectFill
     }
     
     private func addConstraintsToSubviews() {
         image.snp.makeConstraints { make in
             make.height.equalTo(350)
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().inset(8)
+            make.left.right.bottom.equalToSuperview().inset(16)
         }
     }
 }

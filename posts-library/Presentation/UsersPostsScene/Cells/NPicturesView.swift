@@ -33,7 +33,7 @@ class NPicturesView: UIView {
     
     private func addConstraintsToSubviews() {
         label.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(24)
+            make.edges.equalToSuperview().inset(44)
         }
     }
 }

@@ -28,7 +28,7 @@ class UserPostTableViewCell: UITableViewCell {
     }
     
     private func addSubviews() {
-        self.addSubview(self.header)
+        self.contentView.addSubview(self.header)
     }
     
     private func formatSubviews() {
@@ -38,7 +38,7 @@ class UserPostTableViewCell: UITableViewCell {
     
     private func addConstraintsToSubviews() {
         header.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview().inset(16)
+            make.top.left.right.equalToSuperview().priority(.high)
         }
     }
 }
@@ -49,13 +49,13 @@ extension UserPostTableViewCell {
         
         let postsViews = viewModel.posts.compactMap(addPostView)
         var lastAdded: UIView = self.header
-        
+
         postsViews.enumerated().forEach { index, postView in
             postView.snp.makeConstraints { make in
-                make.top.equalTo(lastAdded.snp.bottom).offset(16)
-                make.left.right.equalToSuperview().inset(16)
+                make.top.equalTo(lastAdded.snp.bottom).priority(.high)
+                make.left.right.equalToSuperview()
                 guard index == postsViews.endIndex - 1 else { return }
-                make.bottom.equalToSuperview().inset(16)
+                make.bottom.equalToSuperview().priority(.high)
             }
             lastAdded = postView
         }
@@ -63,7 +63,7 @@ extension UserPostTableViewCell {
     
     private func addPostView(for viewModel: PostSceneModel) -> PostBodyView {
         let view = PostBodyView()
-        self.addSubview(view)
+        self.contentView.addSubview(view)
         self.posts.append(view)
         view.set(viewModel)
         return view

@@ -3,8 +3,9 @@ import Kingfisher
 
 class TriplePictureView: UIView {
     
+    private let outterContainer = UIStackView()
     private let bigImage = UIImageView()
-    private let container = UIStackView()
+    private let innerContainer = UIStackView()
     private let leftImage = UIImageView()
     private let rightImage = UIImageView()
     
@@ -24,47 +25,52 @@ class TriplePictureView: UIView {
     }
     
     private func addSubviews() {
-        self.container.addArrangedSubviews([self.leftImage,
-                                            self.rightImage])
-        self.addSubviews([self.bigImage,
-                          self.container])
+        self.innerContainer.addArrangedSubviews([self.leftImage,
+                                                 self.rightImage])
+        
+        self.outterContainer.addArrangedSubviews([self.bigImage,
+                                                  self.innerContainer])
+        
+        self.addSubview(self.outterContainer)
     }
     
     private func formatSubviews() {
         self.backgroundColor = .white
         
+        self.outterContainer.axis = .vertical
+        self.outterContainer.spacing = 8
+        
         self.bigImage.layer.masksToBounds = true
         self.bigImage.layer.cornerRadius = 8
-        self.bigImage.contentMode = .scaleAspectFit
+        self.bigImage.contentMode = .scaleAspectFill
         
-        self.container.axis = .horizontal
-        self.container.spacing = 8
-        self.container.distribution = .fillEqually
+        self.innerContainer.axis = .horizontal
+        self.innerContainer.spacing = 8
+        self.innerContainer.distribution = .fillEqually
         
         self.leftImage.layer.masksToBounds = true
         self.leftImage.layer.cornerRadius = 8
-        self.leftImage.contentMode = .scaleAspectFit
+        self.leftImage.contentMode = .scaleAspectFill
         
         self.rightImage.layer.masksToBounds = true
         self.rightImage.layer.cornerRadius = 8
-        self.rightImage.contentMode = .scaleAspectFit
+        self.rightImage.contentMode = .scaleAspectFill
     }
     
     private func addConstraintsToSubviews() {
+        outterContainer.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(8)
+            make.left.bottom.right.equalToSuperview().inset(16)
+        }
+        
         bigImage.snp.makeConstraints { make in
-            make.top.right.left.equalToSuperview()
             make.height.equalTo(350)
         }
-        
-        container.snp.makeConstraints { make in
-            make.top.equalTo(self.bigImage.snp.bottom).offset(8)
-            make.left.bottom.right.equalToSuperview()
-        }
-        
+
         leftImage.snp.makeConstraints { make in
             make.height.equalTo(170)
         }
-        
+
         rightImage.snp.makeConstraints { make in
             make.height.equalTo(self.leftImage)
         }
