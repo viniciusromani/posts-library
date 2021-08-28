@@ -35,6 +35,7 @@ extension UserRepository: UserDataSource {
                         return tuple
                     }
             }
+            .catchAndReturn((source: SourceOfDataEntity.none, response: UsersPostsResponse(data: [])))
             .asSingle()
         
         return chain
