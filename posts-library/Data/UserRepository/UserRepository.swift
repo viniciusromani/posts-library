@@ -10,22 +10,30 @@ struct UserRepository {
 }
 
 extension UserRepository: UserDataSource {
-    func retrieveUsersPosts() -> Single<UsersPostsResponse> {
+    func retrieveUsersPosts() -> Single<(source: SourceOfDataEntity, response: UsersPostsResponse)> {
         let request: UsersPostsRequest = .init()
         
         let chain = RequestManager<UsersPostsResponse>()
             .request(request)
             .asObservable()
-            .flatMapLatest { response in
-                self.cacheRepository.storeUsers(response: response).andThen(Observable.just(response))
+            .flatMap { response in
+                self.cacheRepository.storeUsers(response: response)
+                    .andThen(Observable.just((source: SourceOfDataEntity.api, response: response)))
             }
             .catch { exception in
                 guard let _ = exception.asAFError else {
-                    let exc = UnknownException()
-                    return Observable.error(exc)
+                    let unknown = UnknownException()
+                    return Observable.error(unknown)
                 }
-                
-                return self.cacheRepository.retrieveUsers().asObservable()
+
+                return self.cacheRepository.retrieveUsers()
+                    .asObservable()
+                    .map { response -> (source: SourceOfDataEntity, response: UsersPostsResponse) in
+                        let source: SourceOfDataEntity = .cache
+                        let posts = response ?? UsersPostsResponse(data: [])
+                        let tuple = (source: source, response: posts)
+                        return tuple
+                    }
             }
             .asSingle()
         

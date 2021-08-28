@@ -5,7 +5,7 @@ import RxSwift
 struct FetchUsersPostsUseCase: SingleUseCase {
     
     typealias Params = Void
-    typealias Model = [UserModel]
+    typealias Model = (source: SourceOfDataModel, models: [UserModel])
     
     private let repository: UserRepository
     
@@ -13,8 +13,12 @@ struct FetchUsersPostsUseCase: SingleUseCase {
         self.repository = repository
     }
     
-    func execute(with params: Void? = nil) -> Single<[UserModel]> {
+    func execute(with params: Void? = nil) -> Single<(source: SourceOfDataModel, models: [UserModel])> {
         return self.repository.retrieveUsersPosts()
-            .map { UserModel.asArray(mapping: $0.data) }
+            .map { tuple in
+                let mapped = (source: SourceOfDataModel(mapping: tuple.source),
+                              models: UserModel.asArray(mapping: tuple.response.data))
+                return mapped
+            }
     }
 }

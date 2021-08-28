@@ -2,5 +2,5 @@ import Foundation
 import RxSwift
 
 protocol UserDataSource {
-    func retrieveUsersPosts() -> Single<UsersPostsResponse>
+    func retrieveUsersPosts() -> Single<(source: SourceOfDataEntity, response: UsersPostsResponse)>
 }

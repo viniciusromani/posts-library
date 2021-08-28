@@ -12,7 +12,7 @@ extension CacheRepository: CacheDataSource {
         return Completable.create { completable in
             let dispose = Disposables.create()
             let manager = DatabaseManager.shared
-            let encoded = try! response.utf8Encode()
+            let encoded = try? response.utf8Encode()
             let document = MutableDocument(id: self.kDocumentId)
                 .setString(encoded, forKey: self.kEncodedValueInDocument)
             manager.save(document)
@@ -21,7 +21,7 @@ extension CacheRepository: CacheDataSource {
         }
     }
     
-    func retrieveUsers() -> Single<UsersPostsResponse> {
+    func retrieveUsers() -> Single<UsersPostsResponse?> {
         return Single.create { single in
             let dispose = Disposables.create()
             
@@ -38,7 +38,7 @@ extension CacheRepository: CacheDataSource {
                 return dispose
             }
             
-            let response = try! UsersPostsResponse.utf8Decode(from: string)
+            let response = try? UsersPostsResponse.utf8Decode(from: string)
             single(.success(response))
             
             return Disposables.create()

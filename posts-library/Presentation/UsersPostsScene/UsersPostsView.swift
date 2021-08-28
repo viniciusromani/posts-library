@@ -34,7 +34,7 @@ class UsersPostsView: UIView {
         self.backgroundColor = .white
         
         self.container.axis = .horizontal
-        self.container.spacing = 8
+        self.container.spacing = 4
         
         self.statusPreffix.textAlignment = .right
         self.statusPreffix.text = "Your are seeing data from"

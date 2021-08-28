@@ -46,21 +46,15 @@ extension UsersPostsViewController {
                 return cell
             }.disposed(by: self.disposeBag)
         
-        self.viewModel.users
+        self.viewModel.status
             .subscribe(on: MainScheduler.instance)
-            .map { _ in "API" }
+            .map { $0.userFriendlyDescription }
             .bind(to: self.usersPostsView.status.rx.text)
             .disposed(by: self.disposeBag)
         
         self.viewModel.loading
             .subscribe(on: MainScheduler.instance)
             .bind(to: self.usersPostsView.refreshControl.rx.isRefreshing)
-            .disposed(by: self.disposeBag)
-        
-        self.viewModel.error
-            .subscribe(on: MainScheduler.instance)
-            .map { _ in "Cache (Check your internet connection to Fetch from API)" }
-            .bind(to: self.usersPostsView.status.rx.text)
             .disposed(by: self.disposeBag)
     }
 }

@@ -46,6 +46,9 @@
 		A177E53526D826A4000C4179 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E53426D826A4000C4179 /* UIStackView+Extensions.swift */; };
 		A177E53926D8430D000C4179 /* UserPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E53826D8430D000C4179 /* UserPostTableViewCell.swift */; };
 		A177E53B26D8455C000C4179 /* PostBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177E53A26D8455C000C4179 /* PostBodyView.swift */; };
+		A17E6FE726DA11C40015EC65 /* SourceOfDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E6FE626DA11C40015EC65 /* SourceOfDataEntity.swift */; };
+		A17E6FE926DA14190015EC65 /* SourceOfDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E6FE826DA14190015EC65 /* SourceOfDataModel.swift */; };
+		A17E6FEB26DA15100015EC65 /* SourceOfDataSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E6FEA26DA15100015EC65 /* SourceOfDataSceneModel.swift */; };
 		A19A426B26D8B245000CEBA4 /* PostPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A426A26D8B245000CEBA4 /* PostPictureView.swift */; };
 		A19D25EF26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25EE26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift */; };
 		A19D25F226D91E7000B2CC6F /* GeneralException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D25F126D91E7000B2CC6F /* GeneralException.swift */; };
@@ -97,6 +100,9 @@
 		A177E53426D826A4000C4179 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		A177E53826D8430D000C4179 /* UserPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostTableViewCell.swift; sourceTree = "<group>"; };
 		A177E53A26D8455C000C4179 /* PostBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBodyView.swift; sourceTree = "<group>"; };
+		A17E6FE626DA11C40015EC65 /* SourceOfDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfDataEntity.swift; sourceTree = "<group>"; };
+		A17E6FE826DA14190015EC65 /* SourceOfDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfDataModel.swift; sourceTree = "<group>"; };
+		A17E6FEA26DA15100015EC65 /* SourceOfDataSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfDataSceneModel.swift; sourceTree = "<group>"; };
 		A19A426A26D8B245000CEBA4 /* PostPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureView.swift; sourceTree = "<group>"; };
 		A19D25EE26D9100F00B2CC6F /* RxSwift+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		A19D25F126D91E7000B2CC6F /* GeneralException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralException.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				A177E4CC26D79727000C4179 /* PostEntity.swift */,
 				A177E4CE26D79796000C4179 /* UserEntity.swift */,
 				A19D260726D95BDC00B2CC6F /* CachableEntity.swift */,
+				A17E6FE626DA11C40015EC65 /* SourceOfDataEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 			children = (
 				A177E4F226D7AEF8000C4179 /* PostModel.swift */,
 				A177E4F426D7AF06000C4179 /* UserModel.swift */,
+				A17E6FE826DA14190015EC65 /* SourceOfDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 			children = (
 				A177E50226D7C629000C4179 /* PostSceneModel.swift */,
 				A177E50426D7C8E7000C4179 /* UserSceneModel.swift */,
+				A17E6FEA26DA15100015EC65 /* SourceOfDataSceneModel.swift */,
 			);
 			path = SceneModel;
 			sourceTree = "<group>";
@@ -452,10 +461,12 @@
 				A19D25F226D91E7000B2CC6F /* GeneralException.swift in Sources */,
 				A177E52926D80C91000C4179 /* UITableView+Extensions.swift in Sources */,
 				A177E50C26D7CF9F000C4179 /* Coordinator.swift in Sources */,
+				A17E6FE726DA11C40015EC65 /* SourceOfDataEntity.swift in Sources */,
 				A177E52226D80156000C4179 /* DoublePictureView.swift in Sources */,
 				A177E4FE26D7C4E6000C4179 /* UsersPostsView.swift in Sources */,
 				A177E53B26D8455C000C4179 /* PostBodyView.swift in Sources */,
 				A177E52F26D82629000C4179 /* PostHeaderView.swift in Sources */,
+				A17E6FE926DA14190015EC65 /* SourceOfDataModel.swift in Sources */,
 				A177E4DD26D79DF3000C4179 /* UsersPostsResponse.swift in Sources */,
 				A177E4EB26D7ACD2000C4179 /* UserDataSource.swift in Sources */,
 				A177E4D426D79CA9000C4179 /* RequestManager.swift in Sources */,
@@ -470,6 +481,7 @@
 				A177E4CD26D79727000C4179 /* PostEntity.swift in Sources */,
 				A177E4F526D7AF06000C4179 /* UserModel.swift in Sources */,
 				A177E4FC26D7C4B7000C4179 /* UsersPostsViewController.swift in Sources */,
+				A17E6FEB26DA15100015EC65 /* SourceOfDataSceneModel.swift in Sources */,
 				A19D260A26D970FC00B2CC6F /* JSONObject.swift in Sources */,
 				A19D25FF26D937B300B2CC6F /* CacheRepository.swift in Sources */,
 				A19D25FA26D9352F00B2CC6F /* DatabaseManager.swift in Sources */,

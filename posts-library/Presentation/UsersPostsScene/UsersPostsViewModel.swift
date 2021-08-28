@@ -9,7 +9,7 @@ class UsersPostsViewModel {
     private let loadingIndicator = ActivityIndicator()
     public var loading = PublishSubject<Bool>()
     public let users = PublishSubject<[UserSceneModel]>()
-    public let error = PublishSubject<Error>()
+    public let status = PublishSubject<SourceOfDataSceneModel>()
     private let disposeBag = DisposeBag()
     
     init(fetchUsersPostsUseCase: FetchUsersPostsUseCase) {
@@ -25,11 +25,15 @@ class UsersPostsViewModel {
         self.fetchUsersPostsUseCase.execute()
             .trackActivity(self.loadingIndicator)
             .subscribe(
-                onNext: { [weak self] models in
-                    let viewModels = UserSceneModel.asArray(mapping: models)
-                    self?.users.onNext(viewModels)
+                onNext: { [weak self] tuple in
+                    let users = UserSceneModel.asArray(mapping: tuple.models)
+                    self?.users.onNext(users)
+                    
+                    let status = SourceOfDataSceneModel(mapping: tuple.source)
+                    self?.status.onNext(status)
                 }, onError: { [weak self] exception in
-                    self?.error.onNext(exception)
+                    let status = SourceOfDataSceneModel.none
+                    self?.status.onNext(status)
                 }
             ).disposed(by: self.disposeBag)
     }

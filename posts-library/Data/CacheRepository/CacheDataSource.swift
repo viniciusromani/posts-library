@@ -3,5 +3,5 @@ import RxSwift
 
 protocol CacheDataSource {
     func storeUsers(response: UsersPostsResponse) -> Completable
-    func retrieveUsers() -> Single<UsersPostsResponse>
+    func retrieveUsers() -> Single<UsersPostsResponse?>
 }
