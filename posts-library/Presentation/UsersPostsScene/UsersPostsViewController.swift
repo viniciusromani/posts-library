@@ -46,6 +46,11 @@ extension UsersPostsViewController {
                 return cell
             }.disposed(by: self.disposeBag)
         
+        self.viewModel.users
+            .map { $0.count == 0 }
+            .bind(to: self.usersPostsView.rx.isEmpty)
+            .disposed(by: self.disposeBag)
+        
         self.viewModel.status
             .subscribe(on: MainScheduler.instance)
             .map { $0.userFriendlyDescription }

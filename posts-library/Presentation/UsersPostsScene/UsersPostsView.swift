@@ -2,6 +2,8 @@ import UIKit
 import SnapKit
 
 class UsersPostsView: UIView {
+    var emptyStateView: UIView = UsersPostsEmptyView()
+    
     private let container = UIStackView()
     private let statusPreffix = UILabel()
     let status = UILabel()
@@ -45,6 +47,7 @@ class UsersPostsView: UIView {
         self.status.font = .systemFont(ofSize: 16)
         self.status.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
+        self.tableView.alwaysBounceVertical = true
         self.tableView.refreshControl = self.refreshControl
         self.tableView.separatorStyle = .none
         self.tableView.registerCell(UserPostTableViewCell.self)
@@ -60,5 +63,11 @@ class UsersPostsView: UIView {
             make.top.equalTo(self.container.snp.bottom).offset(24)
             make.left.right.bottom.equalToSuperview()
         }
+    }
+}
+
+extension UsersPostsView: EmptableView {
+    func displayEmptyState() {
+        self.showEmpty(at: self.tableView)
     }
 }

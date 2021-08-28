@@ -1,7 +1,6 @@
 import Foundation
 import RxSwift
 
-
 struct FetchUsersPostsUseCase: SingleUseCase {
     
     typealias Params = Void
