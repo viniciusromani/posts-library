@@ -34,12 +34,22 @@ ggit@github.com:viniciusromani/posts-library.git
 	* If the cache does not have any data too, it show an empty state
 	* Each post has some images related to it and also a date
 	* Images are displayed following this rule:
+
 Only 1 image at post:
-![Single Image](/posts-library/posts-library/Resources/single.png)
+![Single Image](/screenshots/posts-library/Resources/single.png?raw=true "One Image at post")
+
 Two images at post:
 ![Double Image](/posts-library/posts-library/Resources/double.png)
+
 Triple images at post:
 ![Triple Image](/posts-library/posts-library/Resources/triple.png)
+
+## Improvements/Ideas
+
+* What if we develop a carrousel for posts that have more than 3 pictures?
+* Testing is life! Let's add some
+* We could try to replace standard `UIRefreshControl` loading to a `Skeleton` loading, it might look good? ham?
+* A zoom of a post detail screen would also fit well (I think!)
 
 ## Built With
 
