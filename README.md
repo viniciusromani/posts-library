@@ -33,16 +33,6 @@ ggit@github.com:viniciusromani/posts-library.git
 	* If the API call fails, the application tries to get data from cache
 	* If the cache does not have any data too, it show an empty state
 	* Each post has some images related to it and also a date
-	* Images are displayed following this rule:
-
-Only 1 image at post:
-![Single Image](/screenshots/posts-library/Resources/single.png?raw=true "One Image at post")
-
-Two images at post:
-![Double Image](/posts-library/posts-library/Resources/double.png)
-
-Triple images at post:
-![Triple Image](/posts-library/posts-library/Resources/triple.png)
 
 ## Improvements/Ideas
 
