@@ -1,4 +1,4 @@
-# idDog
+# Users Posts Library
 
 This is a fun application that will fetch an array of users. These users have done some posts and we will have the pictures they used in each post.
 
@@ -35,11 +35,11 @@ ggit@github.com:viniciusromani/posts-library.git
 	* Each post has some images related to it and also a date
 	* Images are displayed following this rule:
 Only 1 image at post:
-![Single Image](./posts-library/posts-library/Resources/single.png)
+![Single Image](/posts-library/posts-library/Resources/single.png)
 Two images at post:
-![Double Image](./posts-library/posts-library/Resources/double.png)
+![Double Image](/posts-library/posts-library/Resources/double.png)
 Triple images at post:
-![Triple Image](./posts-library/posts-library/Resources/triple.png)
+![Triple Image](/posts-library/posts-library/Resources/triple.png)
 
 ## Built With
 
