@@ -6,10 +6,13 @@ class UsersPostsViewController: UIViewController {
     private var usersPostsView: UsersPostsView!
     private let viewModel: UsersPostsViewModel
     
+    weak var coordinator: AppCoordinator?
+    
     private let disposeBag = DisposeBag()
     
     init(viewModel: UsersPostsViewModel) {
         self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,7 +45,7 @@ extension UsersPostsViewController {
             .bind(to: self.usersPostsView.tableView.rx.items) { tableView, row, element in
                 let indexPath = IndexPath(row: row, section: 0)
                 let cell: UserPostTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                cell.set(cell: element)
+                cell.configure(viewModel: element, delegate: self)
                 return cell
             }.disposed(by: self.disposeBag)
         
@@ -61,5 +64,12 @@ extension UsersPostsViewController {
             .subscribe(on: MainScheduler.instance)
             .bind(to: self.usersPostsView.refreshControl.rx.isRefreshing)
             .disposed(by: self.disposeBag)
+    }
+}
+
+extension UsersPostsViewController: UserPostTableViewCellDelegate {
+    func didTap(image: UIImage?) {
+        let sceneModel = PictureDetailSceneModel(image: image)
+        self.coordinator?.displayDetails(to: sceneModel)
     }
 }

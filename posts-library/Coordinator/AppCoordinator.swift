@@ -28,4 +28,9 @@ class AppCoordinator: Coordinator {
         self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
     }
+    
+    func displayDetails(to sceneModel: PictureDetailSceneModel) {
+        let viewController = PictureDetailSceneViewController(sceneModel: sceneModel)
+        self.navigationController.present(viewController, animated: true)
+    }
 }

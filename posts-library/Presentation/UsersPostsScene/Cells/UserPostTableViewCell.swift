@@ -1,9 +1,12 @@
 import UIKit
 import Kingfisher
+import RxSwift
 
 class UserPostTableViewCell: UITableViewCell {
     private let header = PostHeaderView()
     private var posts: [PostBodyView] = []
+    
+    private(set) var disposeBag = DisposeBag()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -19,6 +22,7 @@ class UserPostTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         self.posts.forEach { $0.removeFromSuperview() }
+        self.disposeBag = DisposeBag()
     }
     
     private func buildViews() {
@@ -44,10 +48,10 @@ class UserPostTableViewCell: UITableViewCell {
 }
 
 extension UserPostTableViewCell {
-    func set(cell viewModel: UserSceneModel) {
+    func configure(viewModel: UserSceneModel, delegate: UserPostTableViewCellDelegate?) {
         self.header.set(viewModel)
         
-        let postsViews = viewModel.posts.compactMap(addPostView)
+        let postsViews = viewModel.posts.compactMap { self.addPostView(for: $0, delegate: delegate) }
         var lastAdded: UIView = self.header
 
         postsViews.enumerated().forEach { index, postView in
@@ -61,11 +65,11 @@ extension UserPostTableViewCell {
         }
     }
     
-    private func addPostView(for viewModel: PostSceneModel) -> PostBodyView {
+    private func addPostView(for viewModel: PostSceneModel, delegate: UserPostTableViewCellDelegate?) -> PostBodyView {
         let view = PostBodyView()
         self.contentView.addSubview(view)
         self.posts.append(view)
-        view.set(viewModel)
+        view.configure(viewModel: viewModel, delegate: delegate)
         return view
     }
 }

@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 class PostBodyView: UIView {
     private let date = UILabel()
@@ -38,19 +39,19 @@ class PostBodyView: UIView {
 }
 
 extension PostBodyView {
-    func set(_ viewModel: PostSceneModel) {
+    func configure(viewModel: PostSceneModel, delegate: UserPostTableViewCellDelegate?) {
         self.date.text = viewModel.date
         
-        var pictureView: PostPictureView
+        var pictureView: PostPictureViewConfigurable
         switch viewModel.type {
         case .single: pictureView = SinglePictureView()
         case .double: pictureView = DoublePictureView()
         case .triple: pictureView = TriplePictureView()
         case .n: pictureView = NPicturesView()
         }
-
+        
         self.addSubview(pictureView)
-        pictureView.set(cell: viewModel.pictures)
+        pictureView.configure(urls: viewModel.pictures, delegate: delegate)
         pictureView.snp.makeConstraints { make in
             make.top.equalTo(self.date.snp.bottom).offset(8)
             make.left.right.bottom.equalToSuperview()

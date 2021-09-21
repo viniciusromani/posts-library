@@ -63,6 +63,8 @@ extension DependencyInjection {
         container.register(UsersPostsViewController.self) { resolver in
             let viewController = UsersPostsViewController(viewModel: resolver.resolve(UsersPostsViewModel.self)!)
             return viewController
-        }.inObjectScope(.weak)
+        }.initCompleted { resolver, viewController in
+            viewController.coordinator = resolver.resolve(AppCoordinator.self)!
+        }
     }
 }
