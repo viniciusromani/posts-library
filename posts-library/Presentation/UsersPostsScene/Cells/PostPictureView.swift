@@ -1,17 +1,23 @@
 import UIKit
+import RxSwift
 
-class PostPictureView: UIView {
-    weak var delegate: UserPostTableViewCellDelegate?
+protocol PostPictureView {
+    var delegate: UserPostTableViewCellDelegate? { get }
+    var disposeBag: DisposeBag { get }
     
+    func addTapGesture(to imageView: UIImageView)
+}
+
+extension PostPictureView {
     func addTapGesture(to imageView: UIImageView) {
         imageView.isUserInteractionEnabled = true
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        let tap = UITapGestureRecognizer()
         imageView.addGestureRecognizer(tap)
-    }
-    
-    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        guard let imageView = sender.view as? UIImageView else { return }
-        self.delegate?.didTap(image: imageView.image)
+        
+        tap.rx.event.bind { sender in
+            guard let view = sender.view as? UIImageView else { return }
+            self.delegate?.didTap(image: view.image)
+        }.disposed(by: self.disposeBag)
     }
 }

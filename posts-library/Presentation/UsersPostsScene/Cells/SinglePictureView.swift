@@ -2,8 +2,11 @@ import UIKit
 import Kingfisher
 import RxSwift
 
-class SinglePictureView: PostPictureView {
+class SinglePictureView: UIView {
     private let image = UIImageView()
+    
+    weak var delegate: UserPostTableViewCellDelegate?
+    var disposeBag: DisposeBag = DisposeBag()
     
     init() {
         super.init(frame: .zero)
@@ -21,7 +24,7 @@ class SinglePictureView: PostPictureView {
     }
     
     private func addSubviews() {
-        super.addTapGesture(to: self.image)
+        self.addTapGesture(to: self.image)
         
         self.addSubview(self.image)
     }
@@ -50,4 +53,8 @@ extension SinglePictureView: PostPictureViewConfigurable {
         
         self.image.kf.setImage(with: urls.first, options: [.transition(.fade(0.5))])
     }
+}
+
+extension SinglePictureView: PostPictureView {
+    
 }

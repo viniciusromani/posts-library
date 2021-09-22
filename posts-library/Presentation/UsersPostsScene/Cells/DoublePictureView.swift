@@ -1,11 +1,15 @@
 import UIKit
 import Kingfisher
+import RxSwift
 
-class DoublePictureView: PostPictureView {
+class DoublePictureView: UIView {
     
     private let container = UIStackView()
     private let leftImage = UIImageView()
     private let rightImage = UIImageView()
+    
+    weak var delegate: UserPostTableViewCellDelegate?
+    var disposeBag: DisposeBag = DisposeBag()
     
     init() {
         super.init(frame: .zero)
@@ -23,8 +27,8 @@ class DoublePictureView: PostPictureView {
     }
     
     private func addSubviews() {
-        super.addTapGesture(to: self.leftImage)
-        super.addTapGesture(to: self.rightImage)
+        self.addTapGesture(to: self.leftImage)
+        self.addTapGesture(to: self.rightImage)
         
         self.container.addArrangedSubviews([self.leftImage,
                                             self.rightImage])
@@ -70,4 +74,8 @@ extension DoublePictureView: PostPictureViewConfigurable {
         self.leftImage.kf.setImage(with: urls.first, options: [.transition(.fade(0.5))])
         self.rightImage.kf.setImage(with: urls.last, options: [.transition(.fade(0.5))])
     }
+}
+
+extension DoublePictureView: PostPictureView {
+    
 }

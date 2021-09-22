@@ -1,13 +1,17 @@
 import UIKit
 import Kingfisher
+import RxSwift
 
-class TriplePictureView: PostPictureView {
+class TriplePictureView: UIView {
     
     private let outterContainer = UIStackView()
     private let bigImage = UIImageView()
     private let innerContainer = UIStackView()
     private let leftImage = UIImageView()
     private let rightImage = UIImageView()
+    
+    weak var delegate: UserPostTableViewCellDelegate?
+    var disposeBag: DisposeBag = DisposeBag()
     
     init() {
         super.init(frame: .zero)
@@ -25,9 +29,9 @@ class TriplePictureView: PostPictureView {
     }
     
     private func addSubviews() {
-        super.addTapGesture(to: self.bigImage)
-        super.addTapGesture(to: self.leftImage)
-        super.addTapGesture(to: self.rightImage)
+        self.addTapGesture(to: self.bigImage)
+        self.addTapGesture(to: self.leftImage)
+        self.addTapGesture(to: self.rightImage)
         
         self.innerContainer.addArrangedSubviews([self.leftImage,
                                                  self.rightImage])
@@ -89,4 +93,8 @@ extension TriplePictureView: PostPictureViewConfigurable {
         self.leftImage.kf.setImage(with: urls[1], options: [.transition(.fade(0.5))])
         self.rightImage.kf.setImage(with: urls.last, options: [.transition(.fade(0.5))])
     }
+}
+
+extension TriplePictureView: PostPictureView {
+    
 }

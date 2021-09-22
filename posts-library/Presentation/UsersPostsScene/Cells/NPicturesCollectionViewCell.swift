@@ -1,8 +1,12 @@
 import UIKit
 import Kingfisher
+import RxSwift
 
 class NPicturesCollectionViewCell: UICollectionViewCell {
     private let image = UIImageView()
+    
+    weak var delegate: UserPostTableViewCellDelegate?
+    var disposeBag: DisposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,13 +19,15 @@ class NPicturesCollectionViewCell: UICollectionViewCell {
     }
     
     private func buildViews() {
+        self.addTapGesture(to: self.image)
+        
         self.addSubviews()
         self.formatSubviews()
         self.addConstraintsToSubviews()
     }
 
     private func addSubviews() {
-        self.contentView.addSubview(self.image)
+        self.addSubview(self.image)
     }
 
     private func formatSubviews() {
@@ -34,18 +40,19 @@ class NPicturesCollectionViewCell: UICollectionViewCell {
     
     private func addConstraintsToSubviews() {
         image.snp.makeConstraints { make in
-//            make.height.equalTo(170)
-//            make.top.equalToSuperview().inset(8)
-//            make.left.right.bottom.equalToSuperview().inset(16)
-            
-            
-            make.edges.equalToSuperview().inset(16)
+            make.edges.equalToSuperview()
         }
     }
 }
 
-extension NPicturesCollectionViewCell {
-    func configure(image: URL?) {
-        self.image.kf.setImage(with: image, options: [.transition(.fade(0.5))])
+extension NPicturesCollectionViewCell: PostPictureView {
+    
+}
+
+extension NPicturesCollectionViewCell: PostPictureViewConfigurable {
+    func configure(urls: [URL], delegate: UserPostTableViewCellDelegate?) {
+        self.delegate = delegate
+        
+        self.image.kf.setImage(with: urls.first, options: [.transition(.fade(0.5))])
     }
 }

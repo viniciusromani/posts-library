@@ -1,12 +1,9 @@
 import UIKit
 import Kingfisher
-import RxSwift
 
 class UserPostTableViewCell: UITableViewCell {
     private let header = PostHeaderView()
     private var posts: [PostBodyView] = []
-    
-    private(set) var disposeBag = DisposeBag()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,7 +19,6 @@ class UserPostTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         self.posts.forEach { $0.removeFromSuperview() }
-        self.disposeBag = DisposeBag()
     }
     
     private func buildViews() {
