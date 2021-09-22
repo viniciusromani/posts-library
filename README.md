@@ -36,10 +36,9 @@ ggit@github.com:viniciusromani/posts-library.git
 
 ## Improvements/Ideas
 
-* What if we develop a carrousel for posts that have more than 3 pictures?
+* What if we set scrolling to be horizontal instead of vertical on  `NPicturesView`
 * Testing is life! Let's add some
 * We could try to replace standard `UIRefreshControl` loading to a `Skeleton` loading, it might look good? ham?
-* A zoom of a post detail screen would also fit well (I think!)
 
 ## Built With
 
