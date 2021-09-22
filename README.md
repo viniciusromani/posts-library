@@ -34,6 +34,11 @@ ggit@github.com:viniciusromani/posts-library.git
 	* If the cache does not have any data too, it show an empty state
 	* Each post has some images related to it and also a date
 
+* Picture Detail Screen
+    * You can view the selected image a little bigger than it is on list
+    * To come back to the list, you should only swipe down :)
+    * There also is a black blur effect since this is presented modally
+
 ## Improvements/Ideas
 
 * Testing is life! Let's add some
