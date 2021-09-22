@@ -43,9 +43,9 @@ class NPicturesView: UIView {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 8
-//        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         flowLayout.scrollDirection = .horizontal
         
+        self.collection.collectionViewLayout = flowLayout
         self.collection.backgroundColor = .clear
         self.collection.delegate = self
         self.collection.dataSource = self
@@ -63,7 +63,7 @@ class NPicturesView: UIView {
             make.top.equalTo(self.bigImage.snp.bottom).offset(8)
             make.left.right.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(8)
-            make.height.equalTo(200)
+            make.height.equalTo(170)
         }
     }
 }
@@ -102,7 +102,7 @@ extension NPicturesView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = CGFloat(170)
         let cellSpacing = (collectionViewLayout as? UICollectionViewFlowLayout)?.minimumInteritemSpacing ?? 8
-        let halfOfWidth = (collectionView.frame.width - cellSpacing) / 2
+        let halfOfWidth = (collectionView.frame.width - cellSpacing) / 2.2
         let size = CGSize(width: halfOfWidth, height: cellHeight)
         return size
     }

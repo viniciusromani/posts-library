@@ -36,7 +36,6 @@ ggit@github.com:viniciusromani/posts-library.git
 
 ## Improvements/Ideas
 
-* What if we set scrolling to be horizontal instead of vertical on  `NPicturesView`
 * Testing is life! Let's add some
 * We could try to replace standard `UIRefreshControl` loading to a `Skeleton` loading, it might look good? ham?
 
